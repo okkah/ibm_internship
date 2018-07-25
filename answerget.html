@@ -1,0 +1,284 @@
+<!DOCTYPE html> 
+
+<title>マイスポ</title> 
+
+<style> 
+
+body { 
+  box-sizing: border-box; 
+  margin: 0; 
+  font: "Meiryo UI", sans-serif; 
+} 
+
+form { 
+  margin: 1rem; 
+  padding: 1rem; 
+  box-shadow: 0 0 3px rgba(0, 0, 0, .3); 
+  display: inline-block; 
+  text-align: center; 
+} 
+
+hr { 
+  height: 1px; 
+  background-color: #def; 
+  border: none; 
+  box-shadow: none; 
+} 
+
+label { 
+  font: inherit; 
+} 
+
+input[type=button].button, 
+input[type=submit].button, 
+button.button { 
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+  border: none; 
+  font: inherit; 
+} 
+
+button[type=submit].button { 
+  background-color: #0b73da; 
+} 
+
+.button { 
+  display: inline-block; 
+  padding: .5em 1em; 
+  border-radius: 4px; 
+  text-align: center; 
+  color: #eff; 
+  background-color: #678; 
+  cursor: pointer; 
+} 
+
+.button:hover { 
+  background-color: #567; 
+} 
+
+.button:disabled { 
+  cursor: not-allowed; 
+  opacity: .6; 
+  color: #def; 
+} 
+
+.toggle-buttons { 
+  display: flex; 
+} 
+
+.toggle-buttons.vertical { 
+  flex-direction: column; 
+} 
+
+.toggle-buttons label { 
+  display: flex; 
+  position: relative; 
+} 
+
+.toggle-buttons [type=radio], 
+.toggle-buttons [type=checkbox] { 
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+  position: absolute; 
+  width: 100%; 
+  height: 100%; 
+  margin: 0; 
+  padding: 0; 
+} 
+
+/* appearance: none for IE11 */ 
+_:-ms-lang(x)::-ms-backdrop, .toggle-buttons [type=radio], 
+_:-ms-lang(x)::-ms-backdrop, .toggle-buttons [type=checkbox] { 
+  visibility: hidden; 
+} 
+
+.toggle-buttons .button { 
+  z-index: 1; 
+} 
+
+.toggle-buttons.vertical .button { 
+  width: 100%; 
+} 
+
+.toggle-buttons:not(.vertical) :not(:first-child) .button { 
+  border-left: 1px solid #567; 
+  border-top-left-radius: 0; 
+  border-bottom-left-radius: 0; 
+} 
+
+.toggle-buttons:not(.vertical) :not(:last-child) .button { 
+  border-top-right-radius: 0; 
+  border-bottom-right-radius: 0; 
+} 
+
+.toggle-buttons.vertical :not(:first-child) .button { 
+  border-top: 1px solid #567; 
+  border-top-left-radius: 0; 
+  border-top-right-radius: 0; 
+} 
+
+.toggle-buttons.vertical :not(:last-child) .button { 
+  border-bottom-left-radius: 0; 
+  border-bottom-right-radius: 0; 
+} 
+
+.toggle-buttons :checked + .button { 
+  background-color: #345; 
+} 
+
+.toggle-buttons :disabled + .button { 
+  cursor: not-allowed; 
+  opacity: .6; 
+  color: #def; 
+} 
+
+</style> 
+
+<script type="text/javascript"> 
+  function handan(sport){ 
+    if(sport == 1){ document.getElementById("kekka").innerHTML = "<br>【マッチング結果】<br>・名前: アイビー<br>・職業: スケートボーダー<br>・性別: 女性<br>・年齢: 32歳<br>・メール: eyebee@ibm.com";}  
+    if(sport == 2){document.getElementById("kekka").innerHTML= "<br>【マッチング結果】<br>・名前: ワトソン<br>・職業: クライマー<br>・性別: 男性<br>・年齢: 51歳<br>・メール: watson@ibm.com"; }  
+    if(sport == 3){document.getElementById("kekka").innerHTML = "<br>【マッチング結果】<br>・名前: ハッカソン<br>・職業: サーファー<br>・性別: 男性<br>・年齢: 25歳<br>・メール: hackathon@ibm.com";} 
+    } 
+    function shindan(nezou){ 
+    if(nezou == 1){document.getElementById("kekka2").innerHTML= "<br>【診断結果】<br>仰向けタイプのあなたは<br>規則正しい行動をとる傾向があり<br>とても協調性が高いと言われています。<br>そんなあなたにはスケートボードがオススメです！";  }  
+    if(nezou == 2){document.getElementById("kekka2").innerHTML= "<br>【診断結果】<br>大の字タイプのあなたは<br>友人を大切にする性格を持っており<br>とても誠実性が高いと言われています。<br>そんなあなたにはクライミングがオススメです！";}  
+    if(nezou == 3){ 
+      document.getElementById("kekka2").innerHTML  
+        = "<br>【診断結果】<br>うつ伏せタイプのあなたは<br>オープンな心を有しており<br>比較的自由な性格を持っています。<br>そんなあなたにはクライミングがオススメです！"; 
+    } 
+    if(nezou == 4){ 
+      document.getElementById("kekka2").innerHTML  
+        = "<br>【診断結果】<br>横向きタイプのあなたは<br>開放的な性格であり<br>とても外向性が高いと言われています。<br>そんなあなたにはサーフィンがオススメです！"; 
+    }  
+    if(nezou == 5){ 
+      document.getElementById("kekka2").innerHTML  
+        = "<br>【診断結果】<br>胎児タイプのあなたは<br>高い知的好奇心と<br>繊細な心を持っています。<br>そんなあなたにはサーフィンがオススメです！"; 
+    } 
+    } 
+</script> 
+
+<form> 
+  <h1>マイスポ</h1> 
+  <p> 
+  <br> 
+  ニックネーム <input type="text" name="text1"><br><br> 
+  <div class="toggle-buttons">     
+  性別 
+    <label> 
+      <input type="radio" name="radio1"> 
+      <span class="button">男性</span> 
+    </label> 
+    <label> 
+      <input type="radio" name="radio1"> 
+      <span class="button">女性</span> 
+    </label> 
+  </div><br> 
+  <div class="toggle-buttons">     
+  年齢 
+    <label> 
+      <input type="radio" name="radio2"> 
+      <span class="button">10代</span> 
+    </label> 
+    <label> 
+      <input type="radio" name="radio2"> 
+      <span class="button">20代</span> 
+    </label> 
+    <label> 
+      <input type="radio" name="radio2"> 
+      <span class="button">30代</span> 
+    </label> 
+    <label> 
+      <input type="radio" name="radio2"> 
+      <span class="button">40代</span> 
+    </label> 
+    <label> 
+      <input type="radio" name="radio2"> 
+      <span class="button">50代</span> 
+    </label> 
+    <label> 
+      <input type="radio" name="radio2"> 
+      <span class="button">60代以上</span> 
+    </label> 
+  </div><br> 
+  <div class="toggle-buttons">     
+  ロケーション 
+    <label> 
+      <input type="radio" name="radio3"> 
+      <span class="button">東京</span> 
+    </label> 
+    <label> 
+      <input type="radio" name="radio3"> 
+      <span class="button">神奈川</span> 
+    </label> 
+    <label> 
+      <input type="radio" name="radio3"> 
+      <span class="button">埼玉</span> 
+    </label> 
+    <label> 
+      <input type="radio" name="radio3"> 
+      <span class="button">千葉</span> 
+    </label> 
+    <label> 
+      <input type="radio" name="radio3"> 
+      <span class="button">茨城</span> 
+    </label> 
+  </div><br> 
+  <div class="toggle-buttons">     
+  習いたいスポーツ 
+    <label> 
+      <input type="radio" name="radio4" value="1"> 
+      <span class="button">スケートボード</span> 
+    </label> 
+    <label> 
+      <input type="radio" name="radio4" value="2"> 
+      <span class="button">クライミング</span> 
+    </label> 
+    <label> 
+      <input type="radio" name="radio4" value="3"> 
+      <span class="button">サーフィン</span> 
+    </label> 
+  </div><br> 
+  <div class="toggle-buttons">     
+  そのスポーツの経験 
+    <label> 
+      <input type="radio" name="radio5"> 
+      <span class="button">経験あり</span> 
+    </label> 
+    <label> 
+      <input type="radio" name="radio5"> 
+      <span class="button">経験なし</span> 
+    </label> 
+  </div><br> 
+  <input type="button" value="マッチング" onclick="handan(radio4.value)"> 
+  <div id="kekka"></div> 
+  <br><br><b><font size="4">スポーツ診断</font></b><br> 
+  あなたの寝相からおすすめのスポーツを診断します。<br><br> 
+  <div class="toggle-buttons"> 
+  寝相 
+    <label> 
+      <input type="radio" name="radio6" value="1"> 
+      <span class="button">仰向け</span> 
+    </label> 
+    <label> 
+      <input type="radio" name="radio6" value="2"> 
+      <span class="button">大の字</span> 
+    </label> 
+    <label> 
+      <input type="radio" name="radio6" value="3"> 
+      <span class="button">うつ伏せ</span> 
+    </label> 
+    <label> 
+      <input type="radio" name="radio6" value="4"> 
+      <span class="button">横向き</span> 
+    </label> 
+    <label> 
+      <input type="radio" name="radio6" value="5"> 
+      <span class="button">胎児</span> 
+    </label> 
+    </div><br/> 
+  <input type="button" value="診断" onclick="shindan(radio6.value)"> 
+  <div id="kekka2"></div> 
+    
+  </p> 
+</form>
